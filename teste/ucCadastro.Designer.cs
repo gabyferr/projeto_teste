@@ -56,6 +56,7 @@
             LOGAR.TabIndex = 0;
             LOGAR.Text = "SALVAR";
             LOGAR.UseVisualStyleBackColor = false;
+            //LOGAR.Click += LOGAR_Click;
             // 
             // panel1
             // 

@@ -23,7 +23,7 @@ namespace teste
 
         private bool ValidarLogin()
         {
-            if (txtEmail.Text == string.Empty || txtSenha.Text == string.Empty)
+            if (!ValidarEmail() || txtSenha.Text == string.Empty)
             {
                 MessageBox.Show("ERROR! CREDENCIAIS INVÁLIDAS!");
                 return false;
@@ -46,14 +46,8 @@ namespace teste
             return true;
 
         }
-        //private bool ValidarEmail(txtEmail)
-        //{
-        //    string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-
-        //    MessageBox.Show("ERROR! E-MAIL INVALIDO!");
-
-        //    return Regex.IsMatch(txtEmail, pattern);
-        //}
+        private bool ValidarEmail()
+            => new Regex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$").Match(txtEmail.Text).Success;
 
         private void label1_Click(object sender, EventArgs e)
         {
